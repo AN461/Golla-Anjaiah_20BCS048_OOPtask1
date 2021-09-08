@@ -1,0 +1,80 @@
+# Problem 1:
+
+def leap_year(year):
+    if year%400==0:
+        print("it is leap year")
+    elif year%100==0:
+        print("It is not leap year")
+    elif year%4==0:
+        print("It is a leap year")
+    else:
+        print("It is not leap year")
+year=int(input("Enter the year : "))
+leap_year(year)
+
+
+#Problem 2:
+def Even_Odd(num):
+    if num%2==0 and num>=2 and num<=5:
+        print("Not Weird")
+    elif num%2==0 and num<=20 and num>=6:
+        print("Weird")
+    elif num%2==0 and num>20:
+        print("Not Weird")
+    else:
+        print("Weird")
+num=int(input("Enter the Number: "))  
+Even_Odd(num)
+
+#Problem 3:
+n = int(input("Enter the number of Guests: "))
+guests = []
+
+for i in range(0, n):
+  name = str(input("Enter the name of Guests: "))
+  guests.append(name)
+print("Guests are: ", guests)
+if(n%2==0):
+  for k in range( int((n)/2) , n-1):
+    print("\nFashionable late persons are: ", guests[k])
+elif(n%2 != 0):
+  for k in range( int((n-1)/2) , n-1):
+    print("\nFashionable late persons are: ", guests[k])
+    
+    
+#Problem 4:
+def search_for_keyword(doc_list, keyword):
+  req_list = []
+  for doc in doc_list:
+    duplicate = doc
+    duplicate.replace(',','')
+    duplicate.replace('.','')
+    duplicate_list = duplicate.split()
+    for word in duplicate_list:
+      if word.lower() == keyword.lower():
+        req_list.append(doc)
+  
+  return req_list
+
+doc_list = ["The Learn Python Challenge Rohit.", "They bought a car", "bangalore"]
+
+keyword = input('Enter the keyword: ')
+required_list= search_for_keyword(doc_list, keyword)
+print(req_list)
+
+keyword = input('Enter the keyword: ')
+required_list = search_for_keyword(doc_list, keyword)
+print(req_list)
+
+keyword = input('Enter the keyword: ')
+required_list = search_for_keyword(doc_list, keyword)
+print(req_list)
+
+#Problem 5:
+def Gross_pay(Basic_pay):
+    DA=float(Basic_pay*(40/100))
+    HRA=float(Basic_pay*(20/100))
+    GP=float(Basic_pay+DA+HRA)
+    print("Gross Pay of the employee is: ",GP)
+Basic_pay=int(input("Enter the Employee's Basic Pay: " ))
+Gross_pay(Basic_pay)
